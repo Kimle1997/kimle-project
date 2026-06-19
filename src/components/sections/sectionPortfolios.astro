@@ -22,10 +22,14 @@ const { title } = Astro.props;
 
           <a class="thumnail" href={`/portfolio/${portfolios[0].slug}`}>
 
-           <img
-              src={getMediaURL(portfolios[0].image.url)}
-              alt={portfolios[0].title}
-            />
+          {
+  portfolios[0]?.image?.url && (
+    <img
+      src={getMediaURL(portfolios[0].image.url)}
+      alt={portfolios[0].title}
+    />
+  )
+}
           </a>
 
           <a class="post-title-link" href={`/portfolio/${portfolios[0].slug}`}><h3 class="post-title">{portfolios[0].title}</h3></a>
@@ -52,10 +56,14 @@ const { title } = Astro.props;
 
               <a class="thumnail" href={`/portfolio/${item.slug}`}>
 
-               <img
-                  src={getMediaURL(item.image.url)}
-                  alt={item.title}
-                />
+           {
+  item?.image?.url && (
+    <img
+      src={getMediaURL(item.image.url)}
+      alt={item.title}
+    />
+  )
+}
 
               </a>
 
