@@ -22,15 +22,23 @@ const imgUrl = getMediaURL(about_img?.url);
         <p class="des">{description}</p>
         <!-- Hiển thị các button -->
         <div class="mt-4">
-          {button && button.map((btn) => (
-            <a 
-              href={btn.btn_link} 
-              class={`btn btn-${btn.variant} me-2`}
-              target={btn.target ? "_blank" : "_self"}
-            >
-              {btn.btn_text}
-            </a>
-          ))}
+         {button && button.map((btn) => (
+          <a
+            href={btn.btn_link}
+            class={`btn btn-${btn.variant} me-2`}
+            target={btn.target ? "_blank" : "_self"}
+          >
+            {btn.btn_text}
+
+            {btn.variant === "arrow" && (
+              <span class="btn-arrow-wrap">
+                <span class="material-symbols-outlined">
+                  trending_flat
+                </span>
+              </span>
+            )}
+          </a>
+        ))}
         </div>
       </div>
       <div class="col-md-7">
